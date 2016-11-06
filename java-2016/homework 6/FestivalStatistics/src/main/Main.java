@@ -15,6 +15,7 @@ public class Main {
 			TicketType ticket = r.random();
 			FestivalAttendeeThread attendee = new FestivalAttendeeThread(ticket, gate);
 			attendee.start();
+			// TODO CODE REVIEW: sleep should be in the attendee class. This way you are just fragmenting the main thread.
 			Thread.sleep(rand.nextInt(50));
 		}
 	}
