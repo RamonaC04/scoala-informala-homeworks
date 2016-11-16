@@ -15,6 +15,7 @@ public class StatisticsThread extends Thread {
 	public void run() {
 		while (true) {
 			try {
+				// TODO CODE REVIEW: gate should be synchronized.
 				List<TicketType> validations = gate.getAllValidations();
 				int noOfFullTypeTicket = 0;
 				for (TicketType t : validations) {
